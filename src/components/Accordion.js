@@ -5,6 +5,7 @@ const Accordion = ({ items }) => {
   const [expandedIndex, setExpandedIndex] = useState(-1);
 
   const handleClick = (index) => {
+    // this is used when state is updated according to pre val and state can be changed very frequently
     setExpandedIndex((current) => {
       if (current === index) {
         return -1;

@@ -1,27 +1,30 @@
-import Accordion from "./components/Accordion";
+import DropDown from "./components/DropDown";
+import { useState } from "react";
 
 const App = () => {
-  const items = [
+  const [SelectedValue, setSelectedValue] = useState(null);
+
+  const handleSelect = (option) => {
+    setSelectedValue(option);
+  };
+
+  const options = [
     {
-      id: "12esd",
-      label: "1st titile",
-      content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type",
+      label: "Red",
+      value: "red",
     },
     {
-      id: "23rn2",
-      label: "2st titile",
-      content:
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000",
+      label: "Green",
+      value: "green",
     },
     {
-      id: "2btsrdaw",
-      label: "3st titile",
-      content:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum",
+      label: "Blue",
+      value: "blue",
     },
   ];
-  return <Accordion items={items} />;
+  return (
+    <DropDown options={options} onChange={handleSelect} value={SelectedValue} />
+  );
 };
 
 export default App;
