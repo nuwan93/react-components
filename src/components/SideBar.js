@@ -5,6 +5,7 @@ const SideBar = () => {
     { label: "DropDown", path: "/" },
     { label: "Accordian", path: "/accordian" },
     { label: "Button", path: "/button" },
+    { label: "Modal", path: "/modal" },
   ];
 
   const renderLinks = links.map((link) => {
