@@ -1,6 +1,11 @@
+import { Fragment } from "react";
+
 const Table = ({ data, config, keyFn }) => {
   const renderTableHeader = config.map((column) => {
-    return <td key={column.label}>{column.label}</td>;
+    if (column.header) {
+      return <Fragment key={column.label}>{column.header()}</Fragment>;
+    }
+    return <th key={column.label}>{column.label}</th>;
   });
 
   const renderTableData = data.map((rowData) => {
